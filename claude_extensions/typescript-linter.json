@@ -1,0 +1,14 @@
+{
+    "name": "typescript-linter",
+    "description": "Runs a TypeScript linter on a given file.",
+    "type": "file-specific",
+    "language": "typescript",
+    "command": "tslint {file_path}",
+    "arguments": [
+        {
+            "name": "file_path",
+            "description": "The path to the TypeScript file to lint.",
+            "required": true
+        }
+    ]
+}

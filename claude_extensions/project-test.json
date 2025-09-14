@@ -1,0 +1,7 @@
+{
+    "name": "project-test",
+    "description": "Tests a project.",
+    "type": "project-specific",
+    "command": "npm run test",
+    "arguments": []
+}

@@ -1,0 +1,8 @@
+<sources>
+    <network>
+        <location id="0">https://tikipeter.github.io/</location>
+    </network>
+    <network>
+        <location id="1">https://nixgates.github.io/packages/</location>
+    </network>
+</sources>

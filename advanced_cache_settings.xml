@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<advancedsettings>
+    <network>
+        <cachemembuffersize>209715200</cachemembuffersize>
+        <readbufferfactor>20</readbufferfactor>
+        <curlclienttimeout>30</curlclienttimeout>
+        <curllowspeedtime>20</curllowspeedtime>
+        <curlretries>2</curlretries>
+    </network>
+    
+    <cache>
+        <harddisk>256</harddisk>
+        <dvdrom>256</dvdrom>
+        <lan>256</lan>
+        <internet>4096</internet>
+    </cache>
+
+    <gui>
+        <algorithmdirtyregions>3</algorithmdirtyregions>
+        <nofliptimeout>0</nofliptimeout>
+    </gui>
+
+    <video>
+        <displayresolution>1080</displayresolution>
+        <subsdelayrange>60</subsdelayrange>
+        <audiodelayrange>10</audiodelayrange>
+        <smallstepbackseconds>7</smallstepbackseconds>
+        <smallstepbacktriggerseconds>10</smallstepbacktriggerseconds>
+        <smallstepbackwardseconds>7</smallstepbackwardseconds>
+        <bigstepbackseconds>60</bigstepbackseconds>
+        <bigstepbackwardseconds>60</bigstepbackwardseconds>
+        <bigstepforwardseconds>600</bigstepforwardseconds>
+        <smallstepforwardseconds>30</smallstepforwardseconds>
+        <ignoresecondsatstart>900</ignoresecondsatstart>
+        <playcountminimumpercent>90</playcountminimumpercent>
+    </video>
+
+    <musiclibrary>
+        <backgroundupdate>true</backgroundupdate>
+    </musiclibrary>
+
+    <videolibrary>
+        <backgroundupdate>true</backgroundupdate>
+        <updateonstartup>false</updateonstartup>
+    </videolibrary>
+
+    <pvr>
+        <timeshiftbuffersize>1048576</timeshiftbuffersize>
+        <numericchannelswitchtimeout>1000</numericchannelswitchtimeout>
+        <channelentrypreviewcampaigncancel>true</channelentrypreviewcampaigncancel>
+        <channelswitchdelay>0</channelswitchdelay>
+        <channelpreviewenabled>false</channelpreviewenabled>
+        <playbackresyncresample>false</playbackresyncresample>
+    </pvr>
+
+    <pathsubstitution>
+        <substitute>
+            <from></from>
+            <to></to>
+        </substitute>
+    </pathsubstitution>
+
+    <splash>false</splash>
+    
+    <loglevel>1</loglevel>
+    
+    <crashdialogdelay>60000</crashdialogdelay>
+    
+</advancedsettings>

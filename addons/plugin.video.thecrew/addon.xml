@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.thecrew"
+       name="The Crew"
+       version="1.6.7"
+       provider-name="The Crew">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.resolveurl" version="5.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+        <summary lang="en_US">The Crew</summary>
+        <description lang="en_US">Multi-source streaming addon with Real Debrid and Premiumize support</description>
+        <disclaimer lang="en_US">The Crew team doesn't host, create, or share any content</disclaimer>
+        <news>Compatible with Kodi v22 - Fire TV optimized</news>
+    </extension>
+</addon>

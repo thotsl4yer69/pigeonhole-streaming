@@ -1,0 +1,14 @@
+{
+    "name": "javascript-linter",
+    "description": "Runs a JavaScript linter on a given file.",
+    "type": "file-specific",
+    "language": "javascript",
+    "command": "eslint {file_path}",
+    "arguments": [
+        {
+            "name": "file_path",
+            "description": "The path to the JavaScript file to lint.",
+            "required": true
+        }
+    ]
+}

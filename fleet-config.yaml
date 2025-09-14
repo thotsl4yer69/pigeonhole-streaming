@@ -1,0 +1,219 @@
+# Pigeonhole Fleet Configuration
+# Fire TV Mass Deployment Settings
+
+deployment:
+  # General settings
+  concurrent_devices: 3
+  deployment_timeout: 1800  # 30 minutes per device
+  backup_retention_days: 30
+  
+  # Network settings
+  discovery_range: "192.168.1.0/24"
+  adb_port: 5555
+  management_port: 8080
+  
+  # Feature flags
+  skip_backup: false
+  install_custom_rom: true
+  enable_root_required: true
+  parallel_deployment: true
+
+devices:
+  # Device type configurations
+  cube_3rd_gen:
+    model: "AFTGAZL"
+    android_version: "9"
+    cpu_arch: "arm64-v8a"
+    memory_gb: 2
+    storage_gb: 16
+    root_method: "magisk"
+    custom_rom: true
+    
+  stick_4k_max:
+    model: "AFTBKA"
+    android_version: "9" 
+    cpu_arch: "arm64-v8a"
+    memory_gb: 2
+    storage_gb: 8
+    root_method: "kingroot"
+    custom_rom: false
+
+# Application configurations
+applications:
+  kodi:
+    version: "20.2"
+    package: "org.xbmc.kodi"
+    skin: "skin.arctic.zephyr.pigeonhole"
+    auto_start: true
+    
+    # Addon configuration
+    addons:
+      - name: "Mad Titan Sports"
+        id: "plugin.video.madtitan"
+        repository: "https://madtitansports.github.io/repository.madtitansports/"
+        
+      - name: "The Ghost"
+        id: "plugin.video.theghost"
+        repository: "https://teamghost666.github.io/"
+        
+      - name: "Tempest"
+        id: "plugin.video.tempest"
+        repository: "https://tikipeter.github.io/"
+        
+      - name: "Fen"
+        id: "plugin.video.fen"
+        repository: "https://tikipeter.github.io/"
+        
+    # Video settings
+    video_settings:
+      resolution: "1080p"
+      refresh_rate: "auto"
+      hardware_acceleration: true
+      allow_hdr: true
+
+  surfshark:
+    package: "com.surfshark.vpnclient"
+    auto_connect: true
+    protocol: "wireguard"
+    server: "au-syd.prod.surfshark.com"
+    kill_switch: true
+    
+  launcher:
+    package: "xyz.wolf.launcher"
+    disable_amazon: true
+    set_default: true
+    custom_background: "/storage/emulated/0/pigeonhole-wallpaper.jpg"
+
+# Security settings
+security:
+  # Root management
+  root_manager: "magisk"
+  hide_root_from_apps: 
+    - "com.netflix.mediaclient"
+    - "com.amazon.avod.thirdpartyclient"
+    - "com.disney.disneyplus"
+    
+  # System hardening
+  disable_amazon_services: true
+  block_telemetry: true
+  custom_hosts_file: true
+  firewall_rules: true
+  
+  # Update management
+  disable_system_updates: true
+  custom_update_server: "https://updates.pigeonhole.local"
+
+# VPN configuration
+vpn:
+  provider: "surfshark"
+  mandatory: true
+  fallback_servers:
+    - "au-mel.prod.surfshark.com"
+    - "au-per.prod.surfshark.com"
+    - "au-bne.prod.surfshark.com"
+  
+  # Kill switch settings
+  kill_switch:
+    enabled: true
+    block_lan: false
+    block_ipv6: true
+    
+  # DNS settings
+  dns_servers:
+    primary: "162.252.172.57"    # Surfshark DNS
+    secondary: "149.154.159.92"  # Surfshark DNS
+    block_ads: true
+    block_malware: true
+
+# Content settings
+content:
+  # Default sources priority
+  source_priority:
+    1: "Real-Debrid"
+    2: "Premiumize"
+    3: "AllDebrid"
+    4: "Free sources"
+    
+  # Quality preferences
+  quality_settings:
+    preferred_resolution: "1080p"
+    minimum_resolution: "720p"
+    allow_cam_rips: false
+    prefer_x265: true
+    
+  # Regional settings
+  region: "AU"
+  language: "en"
+  subtitle_language: "en"
+  
+  # Trakt integration
+  trakt:
+    enabled: true
+    auto_sync: true
+    username: ""  # To be configured per deployment
+    
+# Fleet management
+fleet:
+  management_server: "https://fleet.pigeonhole.local"
+  reporting_interval: 300  # 5 minutes
+  update_check_interval: 3600  # 1 hour
+  
+  # Device health monitoring
+  monitoring:
+    cpu_threshold: 80
+    memory_threshold: 90
+    storage_threshold: 85
+    temperature_threshold: 70
+    
+  # Automatic actions
+  auto_actions:
+    restart_on_hang: true
+    clear_cache_threshold: 90
+    update_addons: true
+    sync_settings: true
+
+# Backup settings
+backup:
+  enabled: true
+  retention_days: 30
+  compression: true
+  
+  # What to backup
+  include:
+    - "boot partition"
+    - "recovery partition"
+    - "kodi userdata"
+    - "app configurations"
+    - "device certificates"
+    
+  # Backup destinations
+  destinations:
+    local: "/opt/pigeonhole/backups"
+    remote: "s3://pigeonhole-backups-au"
+
+# Logging and debugging
+logging:
+  level: "INFO"
+  max_file_size: "100MB"
+  retention_days: 7
+  
+  # Log destinations
+  destinations:
+    local: "/opt/pigeonhole/logs"
+    syslog: true
+    remote: "https://logs.pigeonhole.local"
+    
+# Network optimization
+network:
+  # Buffer settings for streaming
+  kodi_buffer_size: "139460608"  # 133MB
+  kodi_cache_factor: "4"
+  
+  # Bandwidth management  
+  bandwidth_limit: "100Mbps"
+  qos_enabled: true
+  
+  # Connection settings
+  max_concurrent_streams: 2
+  connection_timeout: 30
+  read_timeout: 60

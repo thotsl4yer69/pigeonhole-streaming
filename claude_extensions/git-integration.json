@@ -1,0 +1,23 @@
+{
+    "name": "git-integration",
+    "description": "Provides common Git operations.",
+    "type": "integration",
+    "commands": [
+        {
+            "name": "status",
+            "command": "git status"
+        },
+        {
+            "name": "add",
+            "command": "git add {files}"
+        },
+        {
+            "name": "commit",
+            "command": "git commit -m '{message}'"
+        },
+        {
+            "name": "push",
+            "command": "git push"
+        }
+    ]
+}

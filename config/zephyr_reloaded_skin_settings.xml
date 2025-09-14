@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ZEPHYR RELOADED SKIN SETTINGS - PIGEONHOLE THEME -->
+<!-- Customization settings specific to Zephyr Reloaded skin -->
+
+<skinsettings>
+    <!-- MAIN THEME SETTINGS -->
+    <setting name="ColorTheme" value="Blue" />
+    <setting name="AccentColor" value="#4A5A7A" />
+    <setting name="BackgroundColor" value="#1A2332" />
+    <setting name="TextColor" value="#FFFFFF" />
+    <setting name="FocusColor" value="#6B7B9B" />
+    
+    <!-- HOME SCREEN CUSTOMIZATION -->
+    <setting name="HomeLayout" value="Classic" />
+    <setting name="MainMenuStyle" value="Horizontal" />
+    <setting name="ShowFanart" value="true" />
+    <setting name="AnimateBackground" value="true" />
+    <setting name="BackgroundOpacity" value="80" />
+    
+    <!-- WIDGET CONFIGURATION -->
+    <setting name="ShowWeatherWidget" value="false" />
+    <setting name="ShowTimeWidget" value="true" />
+    <setting name="ShowPlaylistWidget" value="true" />
+    <setting name="ShowRecentlyAddedWidget" value="true" />
+    <setting name="ShowInProgressWidget" value="true" />
+    
+    <!-- STREAMING INTERFACE -->
+    <setting name="EnableVideoInfo" value="true" />
+    <setting name="ShowVideoFlags" value="true" />
+    <setting name="QuickAccess" value="true" />
+    <setting name="ShowRatings" value="true" />
+    <setting name="ShowPlot" value="true" />
+    
+    <!-- VISUAL EFFECTS -->
+    <setting name="EnableAnimations" value="true" />
+    <setting name="FadeTime" value="300" />
+    <setting name="SlideTime" value="200" />
+    <setting name="ZoomEffect" value="true" />
+    
+    <!-- NAVIGATION -->
+    <setting name="WrapLists" value="true" />
+    <setting name="ScrollSpeed" value="3" />
+    <setting name="PageScrolling" value="false" />
+    
+    <!-- MEDIA FLAGS -->
+    <setting name="ShowMediaFlags" value="true" />
+    <setting name="ShowResolutionFlag" value="true" />
+    <setting name="ShowAudioFlag" value="true" />
+    <setting name="ShowVideoCodecFlag" value="true" />
+    <setting name="ShowAspectRatioFlag" value="true" />
+    
+    <!-- OSD SETTINGS -->
+    <setting name="ShowOSDProgress" value="true" />
+    <setting name="OSDTimeout" value="3" />
+    <setting name="ShowOSDInfo" value="true" />
+    
+    <!-- FONTS -->
+    <setting name="FontSet" value="Default" />
+    <setting name="FontSize" value="Medium" />
+    
+    <!-- TRANSPARENCY -->
+    <setting name="PanelTransparency" value="20" />
+    <setting name="DialogTransparency" value="10" />
+    
+    <!-- CUSTOM BACKGROUNDS -->
+    <setting name="UseCustomBackground" value="false" />
+    <setting name="CustomBackgroundPath" value="" />
+    
+    <!-- PIGEONHOLE SPECIFIC -->
+    <setting name="BrandingEnabled" value="true" />
+    <setting name="ShowLogo" value="true" />
+    <setting name="LogoPosition" value="TopRight" />
+    <setting name="BrandColor" value="#4A5A7A" />
+</skinsettings>

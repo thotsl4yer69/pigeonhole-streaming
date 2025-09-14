@@ -1,0 +1,68 @@
+# System files
+$RECYCLE.BIN/
+System Volume Information/
+.dropbox.device
+nul
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Temporary files
+temp-*/
+test-*/
+zip-*/
+*.tmp
+*.temp
+*.log
+
+# APK files (large binaries)
+*.apk
+
+# Backup files
+*-backup/
+*.bak
+*.backup
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archives
+ARCHIVES/
+*.zip
+*.tar.gz
+*.rar
+
+# Platform tools (should be downloaded separately)
+platform-tools/
+
+# Embedded git repositories
+pigeonhole-repo/
+
+# Local configuration
+.env
+.env.local
+config.local.json
+.gemini/
+gha-creds-*.json

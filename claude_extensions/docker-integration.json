@@ -1,0 +1,19 @@
+{
+    "name": "docker-integration",
+    "description": "Provides common Docker operations.",
+    "type": "integration",
+    "commands": [
+        {
+            "name": "build",
+            "command": "docker build -t {tag} ."
+        },
+        {
+            "name": "run",
+            "command": "docker run {tag}"
+        },
+        {
+            "name": "push",
+            "command": "docker push {tag}"
+        }
+    ]
+}

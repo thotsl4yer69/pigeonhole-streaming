@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.pigeonhole.bootstrap" name="Pigeonhole Bootstrap" version="1.0.0" provider-name="Pigeonhole Project">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.script" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Pigeonhole Repository Installer</summary>
+        <description lang="en">Bootstrap installer for Pigeonhole streaming repository</description>
+        <platform>all</platform>
+        <license>MIT</license>
+        <source>https://github.com/pigeonhole-project</source>
+        <website>https://pigeonhole-project.com</website>
+    </extension>
+</addon>

@@ -1,0 +1,7 @@
+{
+    "name": "project-deploy",
+    "description": "Deploys a project.",
+    "type": "project-specific",
+    "command": "npm run deploy",
+    "arguments": []
+}

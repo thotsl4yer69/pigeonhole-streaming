@@ -1,0 +1,20 @@
+{
+    "name": "python-linter",
+    "description": "Runs a Python linter on a given file.",
+    "type": "file-specific",
+    "language": "python",
+    "command": "pylint {file_path}",
+    "arguments": [
+        {
+            "name": "file_path",
+            "description": "The path to the Python file to lint.",
+            "required": true
+        },
+        {
+            "name": "linter",
+            "description": "The linter to use (e.g., pylint, flake8, black).",
+            "required": false,
+            "default": "pylint"
+        }
+    ]
+}

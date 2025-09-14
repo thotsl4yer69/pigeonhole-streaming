@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.thecrew"
+       name="The Crew Repository"
+       version="1.0.5"
+       provider-name="The Crew">
+    <requires>
+        <import addon="xbmc.addon" version="12.0.0"/>
+    </requires>
+    <extension point="xbmc.addon.repository">
+        <dir>
+            <info compressed="false">https://team-crew.github.io/addons.xml</info>
+            <checksum>https://team-crew.github.io/addons.xml.md5</checksum>
+            <datadir zip="true">https://team-crew.github.io/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+        <summary lang="en_US">The Crew Repository</summary>
+        <description lang="en_US">Home to The Crew and other streaming addons</description>
+        <disclaimer lang="en_US">The Crew team doesn't host, create, or share any content. We don't run or know who runs any of the websites used</disclaimer>
+    </extension>
+</addon>

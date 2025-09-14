@@ -1,0 +1,18 @@
+{
+    "name": "slack-integration",
+    "description": "Sends a message to a Slack channel.",
+    "type": "integration",
+    "command": "curl -X POST -H 'Content-type: application/json' --data '{\"text\":\"{message}\"} {webhook_url}'",
+    "arguments": [
+        {
+            "name": "message",
+            "description": "The message to send.",
+            "required": true
+        },
+        {
+            "name": "webhook_url",
+            "description": "The Slack webhook URL.",
+            "required": true
+        }
+    ]
+}

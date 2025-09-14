@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings version="2">
+    <!-- Fire TV Optimized Settings -->
+    <!-- Reduce memory usage and timeout issues -->
+    
+    <!-- Universal Resolvers - Disabled to reduce memory -->
+    <setting id="universal_resolvers">false</setting>
+    <setting id="universal_resolvers_priority">50</setting>
+    
+    <!-- Auto Play Settings - Conservative -->
+    <setting id="auto_pick">false</setting>
+    <setting id="dialog_select">1</setting>
+    <setting id="auto_play">0</setting>
+    
+    <!-- Connection Settings - Shorter timeouts -->
+    <setting id="https_preference">true</setting>
+    <setting id="connection_timeout">15</setting>
+    
+    <!-- Enable only reliable resolvers -->
+    <setting id="resolver_streamtape">true</setting>
+    <setting id="resolver_mixdrop">true</setting>
+    <setting id="resolver_upstream">true</setting>
+    
+    <!-- Disable problematic resolvers -->
+    <setting id="resolver_voe">false</setting>
+    <setting id="resolver_doodstream">false</setting>
+    <setting id="resolver_vidlox">false</setting>
+    <setting id="resolver_fembed">false</setting>
+    
+    <!-- Privacy & Performance -->
+    <setting id="resolver_logging">false</setting>
+    <setting id="resolver_analytics">false</setting>
+</settings>

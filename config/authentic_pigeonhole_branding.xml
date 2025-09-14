@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AUTHENTIC PIGEONHOLE STREAMING BRANDING CONFIGURATION -->
+<!-- Deep blue (#4A5A7A) with white dove logo theme -->
+
+<favourites>
+    <!-- MAIN PIGEONHOLE HEADER -->
+    <favourite name="[COLOR white][B]PIGEONHOLE[/B][/COLOR]" thumb="">noop</favourite>
+    <favourite name="[COLOR white]STREAMING[/COLOR]" thumb="">noop</favourite>
+    <favourite name="[COLOR slate][I]ALL YOUR ENTERTAINMENT. ONE DEVICE[/I][/COLOR]" thumb="">noop</favourite>
+    <favourite name="[COLOR slate]Movies. TV. Live Sports. No Subscriptions.[/COLOR]" thumb="">noop</favourite>
+    <favourite name="[COLOR white]────────────────────────────[/COLOR]" thumb="">noop</favourite>
+    
+    <!-- STREAMING SERVICES -->
+    <favourite name="[COLOR white][B]📺 LIVE TELEVISION[/B][/COLOR]" thumb="">noop</favourite>
+    <favourite name="[COLOR lightblue]🏈 DaddyLive Sports & TV[/COLOR]" thumb="DefaultVideo.png">plugin://plugin.video.daddylive/</favourite>
+    <favourite name="[COLOR lightblue]📺 Live Sports Streams[/COLOR]" thumb="DefaultVideo.png">plugin://plugin.video.sstv/</favourite>
+    <favourite name="[COLOR lightblue]🌍 World TV Channels[/COLOR]" thumb="DefaultVideo.png">plugin://plugin.video.9anime/</favourite>
+    
+    <favourite name="[COLOR white]────────────────────────────[/COLOR]" thumb="">noop</favourite>
+    
+    <favourite name="[COLOR white][B]🎬 MOVIES & SHOWS[/B][/COLOR]" thumb="">noop</favourite>
+    <favourite name="[COLOR lightblue]🎭 The Crew Cinema[/COLOR]" thumb="DefaultVideo.png">plugin://plugin.video.thecrew/</favourite>
+    <favourite name="[COLOR lightblue]☂️ Umbrella Movies[/COLOR]" thumb="DefaultVideo.png">plugin://plugin.video.umbrella/</favourite>
+    <favourite name="[COLOR lightblue]🔴 YouTube Videos[/COLOR]" thumb="DefaultVideo.png">plugin://plugin.video.youtube/</favourite>
+    <favourite name="[COLOR lightblue]🎪 Vimeo Content[/COLOR]" thumb="DefaultVideo.png">plugin://plugin.video.vimeo/</favourite>
+    
+    <favourite name="[COLOR white]────────────────────────────[/COLOR]" thumb="">noop</favourite>
+    
+    <favourite name="[COLOR white][B]⚙️ SYSTEM CONTROLS[/B][/COLOR]" thumb="">noop</favourite>
+    <favourite name="[COLOR lightgray]🔧 Settings Manager[/COLOR]" thumb="DefaultProgram.png">ActivateWindow(settings)</favourite>
+    <favourite name="[COLOR lightgray]📦 Add-on Browser[/COLOR]" thumb="DefaultProgram.png">ActivateWindow(addonbrowser)</favourite>
+    <favourite name="[COLOR lightgray]🗂️ File Manager[/COLOR]" thumb="DefaultProgram.png">ActivateWindow(filemanager)</favourite>
+    <favourite name="[COLOR lightgray]💾 System Information[/COLOR]" thumb="DefaultProgram.png">ActivateWindow(systeminfo)</favourite>
+    
+    <favourite name="[COLOR white]────────────────────────────[/COLOR]" thumb="">noop</favourite>
+    
+    <favourite name="[COLOR white][B]🛡️ SECURITY & PRIVACY[/B][/COLOR]" thumb="">noop</favourite>
+    <favourite name="[COLOR lightgreen]🌐 Surfshark VPN[/COLOR]" thumb="DefaultProgram.png">plugin://plugin.program.surfshark/</favourite>
+    <favourite name="[COLOR yellow]⚠️ Clear Cache[/COLOR]" thumb="DefaultProgram.png">plugin://plugin.program.maintenance/</favourite>
+    <favourite name="[COLOR red]🔄 Restart System[/COLOR]" thumb="DefaultProgram.png">Reboot</favourite>
+    
+    <favourite name="[COLOR white]────────────────────────────[/COLOR]" thumb="">noop</favourite>
+    
+    <!-- PIGEONHOLE FOOTER BRANDING -->
+    <favourite name="[COLOR slate][I]🕊️ Powered by Pigeonhole Streaming[/I][/COLOR]" thumb="">noop</favourite>
+    <favourite name="[COLOR darkgray][I]Professional Entertainment Solutions[/I][/COLOR]" thumb="">noop</favourite>
+</favourites>

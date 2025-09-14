@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.pigeonhole.streaming"
+        name="Pigeonhole Streaming Repository"
+        version="1.0.2"
+        provider-name="MZ1312">
+  <requires>
+    <import addon="xbmc.addon" version="12.0.0"/>
+  </requires>
+  <extension point="xbmc.addon.repository">
+    <dir>
+      <info>https://raw.githubusercontent.com/thotsl4yer69/pigeonhole-streaming/main/addons.xml</info>
+      <checksum>https://raw.githubusercontent.com/thotsl4yer69/pigeonhole-streaming/main/addons.xml.md5</checksum>
+      <datadir>https://raw.githubusercontent.com/thotsl4yer69/pigeonhole-streaming/main</datadir>
+    </dir>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+    <summary lang="en_US">Pigeonhole Streaming Repository</summary>
+    <description lang="en_US">Professional Entertainment Solutions for Fire TV and Kodi. Official repository for Pigeonhole Streaming addons, skins, and configurations.</description>
+    <disclaimer lang="en_US">Use at your own risk. Content providers may have geographical restrictions.</disclaimer>
+  </extension>
+</addon>

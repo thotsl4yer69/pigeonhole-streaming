@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ZEPHYR RELOADED - PIGEONHOLE STREAMING THEME -->
+<!-- Deep Blue #4A5A7A with White Dove Imagery -->
+<!-- Compatible with Zephyr Reloaded Skin on Kodi 21.2 -->
+
+<settings version="1">
+    <!-- SKIN CONFIGURATION -->
+    <setting id="lookandfeel.skin" default="true">skin.zephyr.reloaded</setting>
+    <setting id="lookandfeel.skintheme" default="true">SKINDEFAULT</setting>
+    <setting id="lookandfeel.skincolors" default="true">SKINDEFAULT</setting>
+    <setting id="lookandfeel.font" default="true">Default</setting>
+    <setting id="lookandfeel.enablerssfeeds" default="true">false</setting>
+    
+    <!-- PIGEONHOLE BRANDING COLORS -->
+    <!-- Zephyr Reloaded supports custom color themes -->
+    <setting id="skin.zephyr.reloaded.colorTheme">Blue</setting>
+    <setting id="skin.zephyr.reloaded.accentColor">#4A5A7A</setting>
+    <setting id="skin.zephyr.reloaded.backgroundColor">#1A2332</setting>
+    <setting id="skin.zephyr.reloaded.textColor">#FFFFFF</setting>
+    <setting id="skin.zephyr.reloaded.focusColor">#6B7B9B</setting>
+    
+    <!-- PIGEONHOLE UI CUSTOMIZATIONS -->
+    <setting id="skin.zephyr.reloaded.showFanart">true</setting>
+    <setting id="skin.zephyr.reloaded.animateBackground">true</setting>
+    <setting id="skin.zephyr.reloaded.showWeatherWidget">false</setting>
+    <setting id="skin.zephyr.reloaded.showTimeWidget">true</setting>
+    <setting id="skin.zephyr.reloaded.homeLayout">Classic</setting>
+    <setting id="skin.zephyr.reloaded.mainMenuStyle">Horizontal</setting>
+    
+    <!-- STREAMING OPTIMIZATION -->
+    <setting id="skin.zephyr.reloaded.enableVideoInfo">true</setting>
+    <setting id="skin.zephyr.reloaded.showPlaylistWidget">true</setting>
+    <setting id="skin.zephyr.reloaded.quickAccess">true</setting>
+    
+    <!-- FIRE TV CUBE OPTIMIZATION -->
+    <setting id="videoplayer.useamcodec" default="true">true</setting>
+    <setting id="videoplayer.usemediacodec" default="true">true</setting>
+    <setting id="videoplayer.usemediacodecsurface" default="true">true</setting>
+    <setting id="videoplayer.usevdpau" default="true">false</setting>
+    <setting id="videoplayer.usevaapi" default="true">false</setting>
+    <setting id="videoplayer.prefervaapirender" default="true">false</setting>
+    
+    <!-- AUDIO CONFIGURATION -->
+    <setting id="audiooutput.audiodevice" default="true">PI:HDMI</setting>
+    <setting id="audiooutput.passthrough" default="true">true</setting>
+    <setting id="audiooutput.passthroughdevice" default="true">PI:HDMI</setting>
+    <setting id="audiooutput.ac3passthrough" default="true">true</setting>
+    <setting id="audiooutput.dtspassthrough" default="true">true</setting>
+    <setting id="audiooutput.truehdpassthrough" default="true">true</setting>
+    <setting id="audiooutput.dtshdpassthrough" default="true">true</setting>
+    
+    <!-- VIDEO SETTINGS -->
+    <setting id="videoscreen.resolution" default="true">19</setting>
+    <setting id="videoscreen.screen" default="true">Default</setting>
+    <setting id="videoscreen.vsync" default="true">2</setting>
+    <setting id="videoscreen.limitedrange" default="true">false</setting>
+    
+    <!-- PERFORMANCE SETTINGS -->
+    <setting id="debug.showloginfo" default="true">false</setting>
+    <setting id="debug.extralogging" default="true">false</setting>
+    <setting id="masterlock.lockcode" default="true">-</setting>
+    
+    <!-- NETWORK SETTINGS -->
+    <setting id="services.webserver" default="true">true</setting>
+    <setting id="services.webserverport" default="true">8080</setting>
+    <setting id="services.webserverusername" default="true"></setting>
+    <setting id="services.webserverpassword" default="true"></setting>
+    <setting id="services.zeroconf" default="true">true</setting>
+    
+    <!-- INTERFACE SETTINGS -->
+    <setting id="filelists.showparentdiritems" default="true">false</setting>
+    <setting id="filelists.showextensions" default="true">false</setting>
+    <setting id="filelists.ignorethewhensorting" default="true">true</setting>
+    <setting id="filelists.allowfiledeletion" default="true">false</setting>
+    <setting id="filelists.showaddsourcebuttons" default="true">false</setting>
+    <setting id="filelists.showhidden" default="true">false</setting>
+    
+    <!-- SCREENSAVER -->
+    <setting id="screensaver.mode" default="true">screensaver.xbmc.builtin.black</setting>
+    <setting id="screensaver.time" default="true">10</setting>
+    <setting id="screensaver.usemusicvisinstead" default="true">false</setting>
+    <setting id="screensaver.usedimonpause" default="true">true</setting>
+    
+    <!-- SYSTEM SETTINGS -->
+    <setting id="system.playlistspath" default="true">special://profile/playlists/</setting>
+    <setting id="powermanagement.displaysoff" default="true">0</setting>
+    <setting id="powermanagement.shutdowntime" default="true">0</setting>
+    <setting id="powermanagement.wakeonaccess" default="true">false</setting>
+</settings>

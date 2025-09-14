@@ -1,0 +1,9 @@
+Pigeonhole Streaming Repository Changelog
+
+Version 1.0.0 (2025-09-13)
+- Initial release
+- Fire TV Cube 3rd Gen optimized
+- Android 9 / Kodi 21.1 ARM32 compatibility
+- Surfshark VPN integration ready
+- Australian regional compliance
+- Performance optimized for streaming devices

@@ -1,0 +1,170 @@
+---
+# Pigeonhole Fire TV Fleet Management Playbook
+# Ansible automation for mass Fire TV configuration
+
+- name: Pigeonhole Fire TV Fleet Configuration
+  hosts: firetv_devices
+  gather_facts: no
+  vars:
+    kodi_version: "20.2"
+    android_sdk_tools: "/opt/android-sdk/platform-tools"
+    pigeonhole_apps_dir: "/opt/pigeonhole/apps"
+    backup_dir: "/opt/pigeonhole/backups"
+    
+  tasks:
+    - name: Check device connectivity
+      shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} shell echo 'connected'"
+      register: adb_check
+      failed_when: adb_check.rc != 0
+      
+    - name: Get device information
+      shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} shell getprop"
+      register: device_props
+      
+    - name: Set device facts
+      set_fact:
+        device_model: "{{ device_props.stdout | regex_search('ro.product.model.*\\[(.*)\\]', '\\1') | first }}"
+        device_serial: "{{ device_props.stdout | regex_search('ro.serialno.*\\[(.*)\\]', '\\1') | first }}"
+        android_version: "{{ device_props.stdout | regex_search('ro.build.version.release.*\\[(.*)\\]', '\\1') | first }}"
+        
+    - name: Create backup directory
+      file:
+        path: "{{ backup_dir }}/{{ device_serial }}"
+        state: directory
+        mode: '0755'
+        
+    - name: Check root status
+      shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} shell su -c 'id'"
+      register: root_check
+      ignore_errors: yes
+      
+    - name: Root device if not already rooted
+      block:
+        - name: Install KingRoot APK
+          shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} install {{ pigeonhole_apps_dir }}/kingroot.apk"
+          when: root_check.rc != 0
+          
+        - name: Wait for manual rooting
+          pause:
+            prompt: "Please manually root device {{ device_serial }} using KingRoot app. Press enter when complete."
+          when: root_check.rc != 0
+          
+        - name: Verify root access
+          shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} shell su -c 'id'"
+          register: root_verify
+          failed_when: root_verify.rc != 0
+          
+    - name: Disable Amazon services
+      shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} shell su -c 'pm disable-user --user 0 {{ item }}'"
+      loop:
+        - "com.amazon.tv.launcher"
+        - "com.amazon.tv.settings" 
+        - "com.amazon.device.software.ota"
+        - "com.amazon.dcp"
+        - "com.amazon.device.logmanager"
+      ignore_errors: yes
+      
+    - name: Install Surfshark VPN
+      block:
+        - name: Install Surfshark APK
+          shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} install {{ pigeonhole_apps_dir }}/surfshark-vpn.apk"
+          
+        - name: Configure VPN auto-connect
+          shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} shell settings put global vpn_auto_connect 1"
+          
+    - name: Install Kodi
+      block:
+        - name: Install Kodi APK
+          shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} install {{ pigeonhole_apps_dir }}/kodi-{{ kodi_version }}.apk"
+          
+        - name: Wait for Kodi to initialize
+          pause:
+            seconds: 10
+            
+        - name: Push Kodi configuration
+          shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} push {{ pigeonhole_apps_dir }}/kodi-config/ /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/"
+          
+        - name: Install Arctic Zephyr skin
+          shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} push {{ pigeonhole_apps_dir }}/skin.arctic.zephyr.pigeonhole/ /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/addons/"
+          
+        - name: Install streaming addons
+          shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} push {{ pigeonhole_apps_dir }}/kodi-addons/{{ item }}/ /storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/addons/"
+          loop:
+            - "plugin.video.madtitan"
+            - "plugin.video.theghost"
+            - "plugin.video.tempest" 
+            - "plugin.video.fen"
+            
+    - name: Install custom launcher
+      block:
+        - name: Install Wolf Launcher
+          shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} install {{ pigeonhole_apps_dir }}/wolf-launcher.apk"
+          
+        - name: Set as default launcher
+          shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} shell su -c 'pm set-home-activity xyz.wolf.launcher/.MainActivity'"
+          
+    - name: Install fleet management agent
+      block:
+        - name: Install Pigeonhole agent
+          shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} install {{ pigeonhole_apps_dir }}/pigeonhole-agent.apk"
+          
+        - name: Configure agent
+          shell: |
+            echo '{"device_id": "{{ device_serial }}", "management_server": "https://fleet.pigeonhole.local"}' | 
+            {{ android_sdk_tools }}/adb -s {{ inventory_hostname }} shell 'cat > /storage/emulated/0/pigeonhole-agent-config.json'
+            
+        - name: Start agent service
+          shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} shell am startservice -n com.pigeonhole.agent/.AgentService"
+          
+    - name: Configure system optimizations
+      block:
+        - name: Set performance mode
+          shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} shell su -c 'echo performance > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor'"
+          
+        - name: Optimize memory settings
+          shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} shell su -c 'echo 1 > /proc/sys/vm/drop_caches'"
+          
+        - name: Configure network optimizations
+          shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} shell su -c 'sysctl -w net.core.rmem_max=16777216'"
+          
+    - name: Create device backup
+      block:
+        - name: Backup boot partition
+          shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} shell su -c 'dd if=/dev/block/platform/*/by-name/boot of=/sdcard/boot.img'"
+          
+        - name: Pull boot backup
+          shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} pull /sdcard/boot.img {{ backup_dir }}/{{ device_serial }}/"
+          
+        - name: Backup installed packages
+          shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} shell pm list packages > {{ backup_dir }}/{{ device_serial }}/packages.txt"
+          
+    - name: Final device reboot
+      shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} reboot"
+      
+    - name: Wait for device to come back online
+      shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} wait-for-device"
+      
+    - name: Verify deployment
+      block:
+        - name: Check Kodi installation
+          shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} shell pm list packages | grep kodi"
+          
+        - name: Check VPN installation  
+          shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} shell pm list packages | grep surfshark"
+          
+        - name: Check launcher
+          shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} shell pm list packages | grep wolf"
+          
+        - name: Test root access
+          shell: "{{ android_sdk_tools }}/adb -s {{ inventory_hostname }} shell su -c 'id'"
+          
+    - name: Generate deployment report
+      template:
+        src: deployment-report.j2
+        dest: "{{ backup_dir }}/{{ device_serial }}/deployment-report-{{ ansible_date_time.epoch }}.txt"
+      vars:
+        deployment_time: "{{ ansible_date_time.iso8601 }}"
+        device_info:
+          model: "{{ device_model }}"
+          serial: "{{ device_serial }}"
+          android: "{{ android_version }}"

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="skin.arctic.zephyr.pigeonhole"
+       name="Arctic Zephyr - Pigeonhole Edition"
+       version="2.0.5"
+       provider-name="MZ1312">
+    <requires>
+        <import addon="xbmc.gui" version="5.15.0"/>
+    </requires>
+    <extension point="xbmc.gui.skin" debugging="false">
+        <res width="1920" height="1080" aspect="16:9" default="true" folder="1080i" />
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_US">Arctic Zephyr - Pigeonhole Edition</summary>
+        <description lang="en_US">Arctic Zephyr skin with authentic Pigeonhole Streaming branding and Fire TV optimization. Professional Entertainment Solutions for your streaming experience.</description>
+        <disclaimer lang="en_US">Skin provided as-is for Fire TV optimization.</disclaimer>
+        <platform>all</platform>
+        <license>GPL-2.0</license>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>

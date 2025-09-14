@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.pigeonhole.test"
+       name="Pigeonhole Test Player"
+       version="1.0.0"
+       provider-name="MZ1312">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.resolveurl" version="5.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+        <summary lang="en_US">Pigeonhole Test Player</summary>
+        <description lang="en_US">Test streaming addon for Pigeonhole Streaming setup verification</description>
+        <disclaimer lang="en_US">Test addon for Pigeonhole Streaming configuration</disclaimer>
+    </extension>
+</addon>

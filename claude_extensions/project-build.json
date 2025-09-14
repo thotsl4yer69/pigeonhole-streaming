@@ -1,0 +1,7 @@
+{
+    "name": "project-build",
+    "description": "Builds a project.",
+    "type": "project-specific",
+    "command": "npm run build",
+    "arguments": []
+}

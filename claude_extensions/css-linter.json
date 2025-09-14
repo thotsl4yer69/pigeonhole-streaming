@@ -1,0 +1,14 @@
+{
+    "name": "css-linter",
+    "description": "Runs a CSS linter on a given file.",
+    "type": "file-specific",
+    "language": "css",
+    "command": "stylelint {file_path}",
+    "arguments": [
+        {
+            "name": "file_path",
+            "description": "The path to the CSS file to lint.",
+            "required": true
+        }
+    ]
+}

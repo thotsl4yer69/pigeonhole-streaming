@@ -1,0 +1,299 @@
+# Pigeonhole Enterprise Configuration
+# Customize all aspects of your deployment
+
+# Corporate Branding
+branding:
+  name: "PIGEONHOLE MEDIA CENTER"
+  tagline: "Professional Streaming Solutions"
+  primary_color: "FFFF6B35"    # Pigeonhole Orange
+  secondary_color: "FF1E3A8A"  # Corporate Blue  
+  accent_color: "FF10B981"     # Success Green
+  logo_url: ""                 # Custom logo URL
+  splash_screen: true          # Show branded splash
+  footer_text: "© 2025 Pigeonhole Media Solutions"
+
+# Color Schemes (Multiple themes available)
+color_schemes:
+  corporate:
+    background: "0xFF1A1A1A"
+    text_primary: "0xFFFFFFFF"
+    text_secondary: "0xFFB0B0B0" 
+    highlight: "0xFFFF6B35"
+    success: "0xFF10B981"
+    warning: "0xFFF59E0B"
+    error: "0xFFEF4444"
+  
+  dark_blue:
+    background: "0xFF0F172A"
+    text_primary: "0xFFF8FAFC"
+    text_secondary: "0xFF94A3B8"
+    highlight: "0xFF3B82F6"
+    success: "0xFF22C55E"
+    warning: "0xFFF59E0B"
+    error: "0xFFEF4444"
+    
+  elegant_gold:
+    background: "0xFF1C1917"
+    text_primary: "0xFFFAF9F7"
+    text_secondary: "0xFFA8A29E"
+    highlight: "0xFFF59E0B"
+    success: "0xFF84CC16"
+    warning: "0xFFEAB308"
+    error: "0xFFDC2626"
+
+# Menu Structure Configuration
+menu_structure:
+  layout: "vertical"           # vertical, horizontal, grid
+  show_categories: true        # Group items by category
+  enable_widgets: true         # Home screen widgets
+  custom_shortcuts: true       # Allow custom menu items
+  show_weather: false         # Weather widget
+  show_clock: true            # Clock display
+  auto_hide_menu: false       # Auto-hide menu after selection
+  
+  # Custom menu categories
+  categories:
+    streaming:
+      name: "STREAMING CENTER"
+      icon: "🎬"
+      color: "FF1E3A8A"
+      items:
+        - name: "YouTube Premium"
+          addon: "plugin.video.youtube"
+          description: "Global video platform"
+        - name: "Netflix Integration" 
+          addon: "plugin.video.netflix"
+          description: "Streaming service"
+          requires_subscription: true
+    
+    live_tv:
+      name: "LIVE TELEVISION" 
+      icon: "📺"
+      color: "FFDC2626"
+      items:
+        - name: "DaddyLive Sports"
+          addon: "plugin.video.daddylive"
+          description: "Live sports and TV"
+        - name: "SSTV Sports Hub"
+          addon: "plugin.video.sstv" 
+          description: "Sports streaming"
+    
+    tools:
+      name: "SYSTEM TOOLS"
+      icon: "⚙️"
+      color: "FF6B7280"
+      items:
+        - name: "Settings"
+          action: "ActivateWindow(settings)"
+        - name: "Add-on Manager"
+          action: "ActivateWindow(addonbrowser)"
+
+# Streaming Configuration
+streaming:
+  # Primary streaming sources (automatically installed)
+  essential_addons:
+    - "plugin.video.youtube"
+    - "plugin.video.umbrella"
+    - "plugin.video.thecrew" 
+    - "plugin.video.daddylive"
+    - "script.module.resolveurl"
+    - "inputstream.adaptive"
+  
+  # Optional addons (user choice)
+  optional_addons:
+    - "plugin.video.netflix"
+    - "plugin.video.twitch"
+    - "plugin.audio.tuneinradio"
+    - "plugin.video.vimeo"
+  
+  # Repository sources
+  repositories:
+    - name: "The Crew Repository"
+      url: "https://repository.thecrew.zip"
+      required: true
+    - name: "Kodi Official"
+      url: "https://mirrors.kodi.tv/addons/" 
+      required: true
+
+# Device Profiles
+device_profiles:
+  # Corporate office deployment
+  corporate:
+    privacy_level: "maximum"
+    performance_profile: "optimized" 
+    security_settings:
+      disable_web_server: true
+      disable_remote_access: true
+      disable_logging: true
+      disable_crash_reports: true
+    
+    restrictions:
+      disable_addon_installation: false
+      disable_system_settings: false
+      disable_file_manager: false
+      hide_advanced_settings: true
+    
+    branding:
+      show_corporate_splash: true
+      custom_startup_message: "Welcome to Pigeonhole Corporate Media Center"
+      disable_kodi_branding: true
+  
+  # Home/residential deployment  
+  home:
+    privacy_level: "balanced"
+    performance_profile: "balanced"
+    family_settings:
+      enable_parental_controls: true
+      content_filtering: "moderate"
+      time_restrictions: false
+    
+    features:
+      enable_library_sync: true
+      enable_recommendations: true
+      enable_social_features: false
+  
+  # Hotel/hospitality deployment
+  hotel:
+    privacy_level: "high"
+    performance_profile: "power_save"
+    kiosk_mode: true
+    
+    restrictions:
+      disable_settings_access: true
+      disable_addon_installation: true
+      auto_reset_timer: 300  # seconds
+      guest_session_timeout: 1800  # 30 minutes
+    
+    branding:
+      custom_welcome_message: "Welcome to Hotel Entertainment"
+      show_hotel_info: true
+      emergency_contact_info: true
+  
+  # Retail/demo deployment
+  retail:
+    privacy_level: "minimal"
+    performance_profile: "demo"
+    demo_mode:
+      enable_attract_screen: true
+      demo_loop_timeout: 120
+      product_showcase: true
+      auto_restart: true
+    
+    restrictions:
+      disable_all_settings: true
+      readonly_mode: true
+      prevent_modifications: true
+
+# Performance Optimization
+performance:
+  # Cache settings per device type
+  cache_profiles:
+    fire_tv_cube:
+      memory_cache: 209715200    # 200MB
+      buffer_factor: 4.0
+      concurrent_streams: 3
+      
+    fire_tv_stick:
+      memory_cache: 104857600    # 100MB  
+      buffer_factor: 2.0
+      concurrent_streams: 1
+      
+    nvidia_shield:
+      memory_cache: 314572800    # 300MB
+      buffer_factor: 6.0
+      concurrent_streams: 5
+      
+    android_tv:
+      memory_cache: 157286400    # 150MB
+      buffer_factor: 3.0
+      concurrent_streams: 2
+  
+  # Network optimization
+  network:
+    timeout_settings:
+      connection_timeout: 30
+      low_speed_timeout: 20
+      max_retries: 2
+    
+    bandwidth_management:
+      max_bandwidth: 25000  # Kbps
+      adaptive_streaming: true
+      quality_preferences: "auto"
+
+# Security & Privacy
+security:
+  privacy_levels:
+    minimal:
+      disable_telemetry: false
+      disable_crash_reports: false
+      allow_usage_stats: true
+      
+    balanced: 
+      disable_telemetry: true
+      disable_crash_reports: false
+      allow_usage_stats: false
+      
+    high:
+      disable_telemetry: true
+      disable_crash_reports: true
+      allow_usage_stats: false
+      disable_update_checks: false
+      
+    maximum:
+      disable_telemetry: true
+      disable_crash_reports: true
+      allow_usage_stats: false
+      disable_update_checks: true
+      disable_addon_updates: false
+      block_external_connections: true
+
+# Advanced Customization
+advanced:
+  # Custom skin modifications
+  skin_customization:
+    enable_custom_fonts: false
+    custom_font_path: ""
+    enable_custom_sounds: true
+    custom_sound_pack: "resource.uisounds.crew"
+  
+  # Custom scripts and automation
+  automation:
+    startup_script: ""
+    shutdown_script: ""
+    maintenance_script: ""
+    auto_update_schedule: "weekly"
+  
+  # Integration settings
+  integrations:
+    enable_surfshark_vpn: true
+    vpn_auto_connect: true
+    preferred_vpn_location: "Australia"
+    
+    enable_plex_integration: false
+    plex_server_ip: ""
+    
+    enable_emby_integration: false
+    emby_server_ip: ""
+
+# Deployment Options
+deployment:
+  # Backup and recovery
+  backup:
+    create_backup_before_deploy: true
+    backup_location: "M:/backups/"
+    include_user_data: true
+    include_addon_data: true
+  
+  # Rollback options
+  rollback:
+    enable_rollback: true
+    keep_previous_config: true
+    rollback_timeout: 60  # seconds
+  
+  # Mass deployment
+  mass_deployment:
+    parallel_deployments: true
+    max_concurrent: 5
+    deployment_timeout: 300  # seconds per device
+    retry_failed: true
+    retry_count: 2
