@@ -1,18 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <advancedsettings>
     <network>
+        <!-- Cache memory buffer (200MB for Fire TV Cube streaming) -->
         <cachemembuffersize>209715200</cachemembuffersize>
+        <!-- Read ahead factor for smooth streaming -->
         <readbufferfactor>20</readbufferfactor>
+        <!-- Connection timeout for streaming sources -->
         <curlclienttimeout>30</curlclienttimeout>
+        <!-- Low speed time before timeout -->
         <curllowspeedtime>20</curllowspeedtime>
-        <curlretries>2</curlretries>
+        <!-- Retry attempts for failed connections -->
+        <curlretries>3</curlretries>
+        <!-- Network timeout for general connections -->
+        <timeout>30</timeout>
+        <!-- Buffer mode: 1=all internet filesystems -->
+        <buffermode>1</buffermode>
+        <!-- Disable bandwidth limiting -->
+        <maxbandwidth>0</maxbandwidth>
+        <!-- Low speed limit (1KB/s minimum) -->
+        <curllowspeedlimit>1024</curllowspeedlimit>
     </network>
     
     <cache>
+        <!-- Cache settings optimized for streaming -->
         <harddisk>256</harddisk>
         <dvdrom>256</dvdrom>
-        <lan>256</lan>
+        <lan>512</lan>
+        <!-- Large internet cache for streaming (4MB) -->
         <internet>4096</internet>
+        <!-- Memory cache size (200MB) -->
+        <memorysize>209715200</memorysize>
+        <!-- Read factor for buffering -->
+        <readfactor>20</readfactor>
     </cache>
 
     <gui>
@@ -21,6 +40,7 @@
     </gui>
 
     <video>
+        <!-- Video settings optimized for Fire TV Cube -->
         <displayresolution>1080</displayresolution>
         <subsdelayrange>60</subsdelayrange>
         <audiodelayrange>10</audiodelayrange>
@@ -34,6 +54,20 @@
         <ignoresecondsatstart>900</ignoresecondsatstart>
         <playcountminimumpercent>90</playcountminimumpercent>
     </video>
+
+    <!-- Video player settings for streaming optimization -->
+    <videoplayer>
+        <!-- Minimum audio buffer level -->
+        <mininimumautobufferlevel>2</mininimumautobufferlevel>
+        <!-- Free memory threshold -->
+        <freememory>0</freememory>
+        <!-- Enable modern seek for network streams -->
+        <usemodernseek>true</usemodernseek>
+        <!-- Disable fast seek for network reliability -->
+        <usefastseek>false</usefastseek>
+        <!-- Pause after refresh change -->
+        <pauseafterrefreshchange>0.1</pauseafterrefreshchange>
+    </videoplayer>
 
     <musiclibrary>
         <backgroundupdate>true</backgroundupdate>
@@ -65,5 +99,27 @@
     <loglevel>1</loglevel>
     
     <crashdialogdelay>60000</crashdialogdelay>
-    
+
+    <!-- Audio engine settings for streaming -->
+    <audioengine>
+        <streamsilence>1</streamsilence>
+        <maintainoriginalvolume>false</maintainoriginalvolume>
+        <normalizelevels>true</normalizelevels>
+    </audioengine>
+
+    <!-- Filesystem settings for network streaming -->
+    <filesystem>
+        <curlretries>3</curlretries>
+        <curllowspeedtime>20</curllowspeedtime>
+        <curllowspeedlimit>1024</curllowspeedlimit>
+        <smbclienttimeout>30</smbclienttimeout>
+        <sambaclienttimeout>30</sambaclienttimeout>
+    </filesystem>
+
+    <!-- Performance optimizations -->
+    <system>
+        <playlisttimeout>20</playlisttimeout>
+        <addoninstalldelay>0</addoninstalldelay>
+    </system>
+
 </advancedsettings>

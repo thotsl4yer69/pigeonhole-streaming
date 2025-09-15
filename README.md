@@ -1,110 +1,39 @@
-# Pigeonhole Streaming System
+# Pigeonhole Entertainment Systems
 
-A comprehensive streaming media solution for Fire TV devices with Kodi integration, featuring automated deployment, fleet management, and optimized configurations.
+## Working Directory
 
-## 🎯 Overview
+This is the primary working directory (`M:\\`) for Pigeonhole Entertainment Systems, a company specializing in customized streaming solutions using Amazon Fire TV Stick devices with Kodi media center software.
 
-Pigeonhole Streaming is an advanced streaming media architecture designed for Fire TV devices. It provides automated deployment scripts, custom Kodi configurations, addon management, and fleet-wide monitoring capabilities.
+## Project Overview
 
-## ✨ Key Features
+This directory contains all the tools, configurations, and deployment systems for creating and managing fleets of customized streaming devices with enhanced capabilities beyond standard Fire TV Stick offerings.
 
-- **Automated Deployment**: One-click deployment scripts for Fire TV devices
-- **Fleet Management**: Monitor and manage multiple Fire TV devices
-- **Custom Kodi Integration**: Optimized Kodi configurations with Arctic Zephyr theme
-- **Addon Management**: Automated addon installation and validation
-- **HTTP Control**: Remote control via HTTP API
-- **Real Debrid Integration**: Premium streaming service integration
-- **Recovery Systems**: Automated backup and recovery mechanisms
+## Key Components
 
-## 🚀 Quick Start
+- **MZ-1312**: Build kit and tools for Firestick deployment
+- **Kodi builds**: Custom Kodi configurations and installations
+- **Customer profiles**: Customized deployment configurations for different clients
+- **Deployment tools**: Applications and scripts for large-scale device management
+- **Addon repositories**: Third-party Kodi addons and plugin configurations
 
-### Prerequisites
-- ADB (Android Debug Bridge) access to Fire TV devices
-- Python 3.7+ for automation scripts
-- Network access to target Fire TV devices
+## Specialized Agents
 
-### Basic Setup
+This project uses several specialized agents for different aspects of the business:
 
-1. **Enable Developer Options** on your Fire TV device
-2. **Enable ADB Debugging** in Developer Options
-3. **Connect to your Fire TV**:
-   ```bash
-   adb connect YOUR_FIRE_TV_IP:5555
-   ```
-4. **Run deployment script**:
-   ```batch
-   deploy_pigeonhole_stable_final.bat
-   ```
+1. **firestick-kodi-specialist**: Fire TV Stick hardware optimization and Kodi customization
+2. **marketing-page-designer**: High-converting marketing page creation
+3. **kodi-addon-developer**: Kodi addon development and debugging
+4. **firestick-deployment-orchestrator**: Large-scale deployment management
+5. **vpn-configuration-specialist**: VPN and geo-restriction bypass setup
+6. **kodi-performance-optimizer**: Kodi performance tuning
+7. **claudecode-developer**: Software development using ClaudeCode
 
-## 📁 Project Structure
+## Documentation
 
-- `deploy_*.bat` - Deployment scripts for various configurations
-- `kodi_*.py` - Python automation and control scripts
-- `config/` - Configuration files and settings
-- `addons/` - Kodi addon packages
-- `scripts/` - Utility and maintenance scripts
-- `documentation/` - Setup guides and technical documentation
+- PIGEONHOLE_GOLD_SETUP_GUIDE.md - Comprehensive setup guide
+- PIGEONHOLE_PROJECT_STRUCTURE.md - Project structure documentation
+- QWEN.md - Project context for Qwen Code agents
 
-## 🔧 Configuration
+## Getting Started
 
-### Core Components
-- **Kodi 21.1**: Latest stable Kodi installation
-- **Arctic Zephyr Theme**: Custom Pigeonhole branding
-- **Addon Repository**: Curated addon collection
-- **HTTP Remote Control**: Web-based device management
-
-### Key Scripts
-- `deploy_pigeonhole_stable_final.bat` - Main deployment script
-- `kodi_http_controller.py` - HTTP API controller
-- `enable_pigeonhole_addons.py` - Addon activation system
-- `test_streaming_functionality.py` - System validation
-
-## 📊 Fleet Management
-
-Monitor multiple devices with:
-- `fleet-monitoring.py` - Real-time fleet status
-- `fleet-config.yaml` - Device configuration management
-- `ansible-firetv-fleet.yml` - Ansible automation playbook
-
-## 🛠️ Development
-
-### Testing
-```bash
-python test_kodi_http.py
-python test_streaming_functionality.py
-```
-
-### Validation
-```bash
-python addon_validation_system.py
-```
-
-## 📝 Documentation
-
-- `PIGEONHOLE_GOLD_SETUP_GUIDE.md` - Complete setup guide
-- `PIGEONHOLE_PROJECT_STRUCTURE.md` - Project architecture
-- `HTTP_FIRST_APPROACH.md` - HTTP control documentation
-
-## 🤝 Contributing
-
-This project is designed for streaming media enthusiasts and Fire TV device management. Contributions welcome for:
-- Device compatibility improvements
-- Deployment automation enhancements
-- Monitoring and alerting features
-- Documentation updates
-
-## ⚖️ Legal Notice
-
-This project is for educational and personal use. Users are responsible for compliance with local laws and terms of service for streaming platforms and content providers.
-
-## 🔧 Support
-
-For issues and questions:
-1. Check the documentation in `/documentation`
-2. Review setup guides
-3. Validate your Fire TV device configuration
-4. Ensure network connectivity
-
----
-
-**Built for streamlined Fire TV device management and optimized media streaming experiences.**
+For new team members or collaborators, review the documentation files and consult with the appropriate specialized agent based on the task at hand.

@@ -1,0 +1,31 @@
+============================================================
+PIGEONHOLE MANUAL INSTALLATION GUIDE
+============================================================
+
+REPOSITORY INSTALLATION:
+1. Open Kodi
+2. Go to Settings > Add-ons
+3. Select 'Install from zip file'
+4. Enable 'Unknown sources' if prompted
+5. Navigate to the following files and install:
+   - Install repository.pigeonhole.streaming-FIXED.zip via Kodi: Add-ons > Install from zip file
+   - Install pigeonhole-streaming-repository.zip via Kodi: Add-ons > Install from zip file
+   - Install repository.tikipeter.zip via Kodi: Add-ons > Install from zip file
+   - Install repository.nixgates.zip via Kodi: Add-ons > Install from zip file
+
+ADDON INSTALLATION:
+1. After installing repositories, go to Add-ons > Install from repository
+2. Select 'Pigeonhole Streaming Repository'
+3. Install the following addons:
+   - script.module.resolveurl
+   - plugin.video.thecrew
+   - plugin.video.fen.lite
+   - plugin.video.madtitansports
+
+CONFIGURATION:
+1. Configure ResolveURL with Real-Debrid API key
+2. Configure The Crew with Real-Debrid account
+3. Configure FEN Lite with Real-Debrid account
+4. Test streaming functionality
+
+============================================================

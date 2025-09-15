@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings version="1">
+  <section id="system">
+    <category id="display">
+      <group id="1">
+        <setting id="videoscreen.screenmode">
+          <default>0</default>
+        </setting>
+      </group>
+    </category>
+  </section>
+  
+  <section id="player">
+    <category id="video">
+      <group id="2">
+        <!-- Hardware acceleration -->
+        <setting id="videoplayer.usemediacodec">
+          <default>true</default>
+        </setting>
+        <setting id="videoplayer.usemediacodecsurface">
+          <default>true</default>
+        </setting>
+        <setting id="videoplayer.rendermethod">
+          <default>0</default>
+        </setting>
+      </group>
+    </category>
+    
+    <category id="network">
+      <group id="1">
+        <!-- Network optimization -->
+        <setting id="network.disableipv6">
+          <default>true</default>
+        </setting>
+        <setting id="network.curlretries">
+          <default>2</default>
+        </setting>
+        <setting id="network.httpmaxreadrate">
+          <default>4096</default>
+        </setting>
+      </group>
+    </category>
+  </section>
+  
+  <section id="services">
+    <category id="control">
+      <group id="1">
+        <!-- Disable resource-heavy services -->
+        <setting id="services.airplay">
+          <default>false</default>
+        </setting>
+        <setting id="services.upnp">
+          <default>false</default>
+        </setting>
+        <setting id="services.zeroconf">
+          <default>false</default>
+        </setting>
+      </group>
+    </category>
+  </section>
+  
+  <section id="audio">
+    <category id="audiopause">
+      <group id="1">
+        <setting id="audiooutput.dontnormalizelevels">
+          <default>true</default>
+        </setting>
+      </group>
+    </category>
+  </section>
+</settings>

@@ -1,0 +1,98 @@
+<settings>
+    <!-- Advanced Cache Settings for Fire TV Cube -->
+    
+    <!-- Network Cache Settings -->
+    <setting id="cache.network.type" value="1" />
+    <setting id="cache.network.readfactor" value="5.000000" />
+    <setting id="cache.network.cachemembuffersize" value="20971520" />
+    <setting id="cache.network.buffermode" value="1" />
+    
+    <!-- File Cache Settings -->
+    <setting id="cache.hdd.inuse" value="true" />
+    <setting id="cache.hdd.sectorSize" value="2048" />
+    <setting id="cache.hdd.foldersize" value="256" />
+    <setting id="cache.hdd.temporary.path" value="/storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/temp/" />
+    
+    <!-- DVD Cache Settings -->
+    <setting id="cache.dvd.temporary.path" value="/storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/temp/" />
+    
+    <!-- Music Cache Settings -->
+    <setting id="cache.music.temporary.path" value="/storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/temp/" />
+    
+    <!-- Video Cache Settings -->
+    <setting id="cache.video.temporary.path" value="/storage/emulated/0/Android/data/org.xbmc.kodi/files/.kodi/temp/" />
+    <setting id="cache.video.useddsfanart" value="false" />
+    
+    <!-- Memory Cache Settings -->
+    <setting id="cache.memory.size" value="524288" />
+    <setting id="cache.memory.buffer.size" value="4096" />
+    
+    <!-- Advanced Settings -->
+    <setting id="videoplayer.usemediastandard" value="false" />
+    <setting id="videoplayer.usechd" value="false" />
+    <setting id="videoplayer.usedxva2" value="true" />
+    <setting id="videoplayer.usevideotoolbox" value="false" />
+    <setting id="videoplayer.usevaapi" value="false" />
+    <setting id="videoplayer.usevdpa" value="false" />
+    <setting id="videoplayer.usemediacodec" value="true" />
+    <setting id="videoplayer.usemediacodecsurface" value="true" />
+    <setting id="videoplayer.rendermethod" value="0" />
+    
+    <!-- Audio Settings -->
+    <setting id="audiooutput.audiodevice" value="AES" />
+    <setting id="audiooutput.channels" value="2" />
+    <setting id="audiooutput.config" value="2" />
+    <setting id="audiooutput.dontnormalizelevels" value="true" />
+    <setting id="audiooutput.guisoundmode" value="1" />
+    <setting id="audiooutput.mode" value="0" />
+    <setting id="audiooutput.streamnoise" value="false" />
+    <setting id="audiooutput.streamsilence" value="0" />
+    <setting id="audiooutput.supportdtshdcpudecoding" value="false" />
+    <setting id="audiooutput.supporttruehdcpudecoding" value="false" />
+    <setting id="audiooutput.volumesteps" value="100" />
+    
+    <!-- Network Settings -->
+    <setting id="network.bandwidth" value="0" />
+    <setting id="network.curlretries" value="2" />
+    <setting id="network.disableipv6" value="true" />
+    <setting id="network.dnsservers" value="" />
+    <setting id="network.httpdebug" value="false" />
+    <setting id="network.httpmaxreadrate" value="4096" />
+    <setting id="network.httpproxypassword" value="" />
+    <setting id="network.httpproxyport" value="8080" />
+    <setting id="network.httpproxyserver" value="" />
+    <setting id="network.httpproxyusername" value="" />
+    <setting id="network.usehttpproxy" value="false" />
+    <setting id="network.wakeonaccess" value="false" />
+    
+    <!-- System Settings -->
+    <setting id="system.waitfornetwork" value="false" />
+    <setting id="system.wakeonlan" value="false" />
+    
+    <!-- Addon Settings -->
+    <setting id="addon.autoupdate" value="false" />
+    <setting id="addon.checkforupdates" value="false" />
+    
+    <!-- Services Settings -->
+    <setting id="services.airplay" value="false" />
+    <setting id="services.airplayvolumecontrol" value="false" />
+    <setting id="services.devicename" value="Kodi" />
+    <setting id="services.esallinterfaces" value="false" />
+    <setting id="services.escontinuousdelay" value="25" />
+    <setting id="services.esenabled" value="true" />
+    <setting id="services.esmaxtime" value="10" />
+    <setting id="services.esport" value="9777" />
+    <setting id="services.esportrange" value="10" />
+    <setting id="services.eventclientenabled" value="false" />
+    <setting id="services.plex" value="false" />
+    <setting id="services.upnp" value="false" />
+    <setting id="services.upnpannounce" value="false" />
+    <setting id="services.upnprenderer" value="false" />
+    <setting id="services.upnpserver" value="false" />
+    <setting id="services.webserver" value="true" />
+    <setting id="services.webserverpassword" value="0000" />
+    <setting id="services.webserverport" value="8080" />
+    <setting id="services.webserverusername" value="kodi" />
+    <setting id="services.webskin" value="webinterface.default" />
+    <setting id="services.zeroconf" value="false" />
+</settings>

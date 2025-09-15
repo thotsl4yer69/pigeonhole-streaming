@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Fire TV Cube Optimized Kodi Settings - Pigeonhole Streaming
+Optimized for Fire TV Cube 3rd Gen hardware specifications
+-->
+<settings version="2">
+    <!-- Video Settings -->
+    <setting id="videoscreen.rendermethod">0</setting> <!-- Auto -->
+    <setting id="videoscreen.resolution">19</setting> <!-- 1920x1080 -->
+    <setting id="videoscreen.screen">0</setting>
+    <setting id="videoscreen.adjustrefreshrate">2</setting> <!-- Always -->
+    <setting id="videoscreen.pauseafterrefreshchange">2</setting> <!-- 2 seconds -->
+    <setting id="videoplayer.usedisplayasclock">true</setting>
+    <setting id="videoplayer.useamcodec">false</setting>
+    <setting id="videoplayer.usemediacodec">true</setting>
+    <setting id="videoplayer.usemediacodecprobe">true</setting>
+    <setting id="videoplayer.usemediacodecsurface">true</setting>
+    <setting id="videoplayer.limitguiupdate">0</setting>
+    <setting id="videoplayer.seekdelay">750</setting>
+    <setting id="videoplayer.maxspeedup">4</setting>
+
+    <!-- Audio Settings -->
+    <setting id="audiooutput.audiodevice">AudioTrack</setting>
+    <setting id="audiooutput.passthrough">false</setting>
+    <setting id="audiooutput.passthroughac3">false</setting>
+    <setting id="audiooutput.passthroughdts">false</setting>
+    <setting id="audiooutput.channels">2</setting> <!-- Stereo for Fire TV -->
+    <setting id="audiooutput.samplerate">48000</setting>
+    <setting id="audiooutput.maintainoriginalvolume">false</setting>
+    <setting id="audiooutput.processquality">3</setting> <!-- High -->
+    <setting id="audiooutput.streamsilence">1</setting>
+    <setting id="audiooutput.guisoundmode">0</setting> <!-- Off for performance -->
+
+    <!-- Network Settings -->
+    <setting id="network.usehttpproxy">false</setting>
+    <setting id="network.bandwidth">0</setting> <!-- Unlimited -->
+    <setting id="network.cachemembuffersize">209715200</setting> <!-- 200MB -->
+
+    <!-- GUI Settings -->
+    <setting id="lookandfeel.skin">skin.arctic.zephyr.pigeonhole</setting>
+    <setting id="lookandfeel.skincolors">defaults</setting>
+    <setting id="lookandfeel.font">Default</setting>
+    <setting id="lookandfeel.skinzoom">0</setting>
+    <setting id="lookandfeel.startupwindow">10000</setting> <!-- Home -->
+    <setting id="lookandfeel.soundskin">resource.uisounds.kodi</setting>
+    <setting id="lookandfeel.enablerssfeeds">false</setting>
+    <setting id="lookandfeel.rssedit">""</setting>
+
+    <!-- Performance Settings -->
+    <setting id="system.playlistasfolders">false</setting>
+    <setting id="filelists.showparentdiritems">false</setting>
+    <setting id="filelists.showextensions">false</setting>
+    <setting id="filelists.ignorethewhensorting">true</setting>
+    <setting id="filelists.showaddsourcebuttons">false</setting>
+    <setting id="filelists.showsystemfilenames">false</setting>
+
+    <!-- Cache Settings -->
+    <setting id="cache.harddisk">256</setting> <!-- MB -->
+    <setting id="cache.dvd">256</setting>
+    <setting id="cache.lan">256</setting>
+    <setting id="cache.internet">256</setting>
+
+    <!-- System Settings -->
+    <setting id="system.buildversion">22.0-RELEASE</setting>
+    <setting id="system.shutdowntime">0</setting>
+    <setting id="system.powermanagement">0</setting> <!-- Disabled -->
+    <setting id="system.shutdownfunctions">0</setting>
+
+    <!-- Web Server Settings -->
+    <setting id="services.webserver">true</setting>
+    <setting id="services.webserverport">8080</setting>
+    <setting id="services.webserverusername">kodi</setting>
+    <setting id="services.webserverpassword">0000</setting>
+    <setting id="services.webskin">webinterface.default</setting>
+    <setting id="services.esenabled">true</setting>
+    <setting id="services.esport">9777</setting>
+    <setting id="services.esallinterfaces">true</setting>
+
+    <!-- Zeroconf Settings -->
+    <setting id="services.zeroconf">false</setting> <!-- Disabled for performance -->
+    <setting id="services.airplay">false</setting>
+    <setting id="services.useairplaypassword">false</setting>
+
+    <!-- UPnP Settings -->
+    <setting id="services.upnp">false</setting> <!-- Disabled for performance -->
+    <setting id="services.upnpserver">false</setting>
+    <setting id="services.upnprenderer">false</setting>
+
+    <!-- Input Settings -->
+    <setting id="input.peripherals">true</setting>
+    <setting id="input.enablemouse">false</setting>
+    <setting id="input.enablejoystick">true</setting>
+
+    <!-- Weather Settings (Disabled) -->
+    <setting id="weather.addon">weather.openweathermap.extended</setting>
+    <setting id="weather.currentlocation">1</setting>
+
+    <!-- Screensaver Settings -->
+    <setting id="screensaver.mode">screensaver.xbmc.builtin.black</setting>
+    <setting id="screensaver.time">10</setting> <!-- 10 minutes -->
+    <setting id="screensaver.usedimonpause">true</setting>
+
+    <!-- Add-on Settings -->
+    <setting id="addons.unknownsources">true</setting>
+    <setting id="addons.notifications">true</setting>
+    <setting id="addons.autoupdates">0</setting> <!-- Manual -->
+
+    <!-- Debug Settings -->
+    <setting id="debug.showloginfo">false</setting>
+    <setting id="debug.extralogging">false</setting>
+    <setting id="debug.setextraloglevel">0</setting>
+
+    <!-- Master Lock -->
+    <setting id="masterlock.lockcode">-</setting>
+    <setting id="masterlock.startuplock">false</setting>
+
+    <!-- Parental Controls -->
+    <setting id="parentalcontrol.enabled">false</setting>
+
+    <!-- Regional Settings -->
+    <setting id="locale.language">resource.language.en_gb</setting>
+    <setting id="locale.country">Australia</setting>
+    <setting id="locale.timezone">Australia/Sydney</setting>
+    <setting id="locale.timezonecountry">Australia</setting>
+    <setting id="locale.charset">UTF-8</setting>
+    <setting id="locale.keyboardlayouts">keyboard.xml</setting>
+
+    <!-- Date & Time -->
+    <setting id="locale.use24hourclock">false</setting>
+    <setting id="locale.dateformat">dd/mm/yyyy</setting>
+    <setting id="locale.timeformat">h:mm:ss xx</setting>
+    <setting id="locale.shortdateformat">dd/mm</setting>
+    <setting id="locale.speedunit">kmh</setting>
+    <setting id="locale.temperatureunit">C</setting>
+</settings>
