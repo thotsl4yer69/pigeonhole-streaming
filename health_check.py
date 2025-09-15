@@ -108,7 +108,6 @@ class PigeonholeHealthCheck:
             
             # Try to load configuration
             try:
-                sys.path.insert(0, str(self.project_root))
                 from scripts.pigeonhole_config import get_config
                 
                 config = get_config()
