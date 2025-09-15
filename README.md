@@ -16,34 +16,54 @@ Pigeonhole Streaming is an advanced streaming media architecture designed for Fi
 - **Real Debrid Integration**: Premium streaming service integration
 - **Recovery Systems**: Automated backup and recovery mechanisms
 
-## 🚀 Quick Start
+## 🚀 Quick Start (For Beginners!)
 
-### Prerequisites
-- ADB (Android Debug Bridge) access to Fire TV devices
-- Python 3.7+ for automation scripts
-- Network access to target Fire TV devices
+### 🆕 **NEW USERS - START HERE:**
+```bash
+python3 start_here.py
+```
+This interactive tool will guide you through everything step-by-step!
 
-### Basic Setup
+### 📚 **Or Follow These Simple Steps:**
 
-1. **Enable Developer Options** on your Fire TV device
-2. **Enable ADB Debugging** in Developer Options
-3. **Connect to your Fire TV**:
-   ```bash
-   adb connect YOUR_FIRE_TV_IP:5555
-   ```
-4. **Run deployment script**:
-   ```batch
-   deploy_pigeonhole_stable_final.bat
-   ```
+#### Step 1: Get Your Fire TV Ready
+1. **Enable Developer Options**: Settings → My Fire TV → About → Click your Fire TV name 7 times
+2. **Enable ADB Debugging**: Settings → My Fire TV → Developer Options → Turn ON "ADB debugging"
+3. **Find your Fire TV IP**: Settings → My Fire TV → About → Network
 
-## 📁 Project Structure
+#### Step 2: Quick Health Check
+```bash
+python3 health_check.py
+```
+This checks if everything is ready to go!
 
-- `deploy_*.bat` - Deployment scripts for various configurations
-- `kodi_*.py` - Python automation and control scripts
-- `config/` - Configuration files and settings
-- `addons/` - Kodi addon packages
-- `scripts/` - Utility and maintenance scripts
-- `documentation/` - Setup guides and technical documentation
+#### Step 3: Connect and Deploy
+```bash
+adb connect YOUR_FIRE_TV_IP:5555
+deploy_pigeonhole_stable_final.bat
+```
+
+#### Step 4: Customize (Optional)
+```bash
+python3 easy_customize.py
+```
+Change colors, name, and apps without coding!
+
+## 🎯 Beginner-Friendly Tools
+
+We've created special tools to help you understand and use your project:
+
+- **🆕 `start_here.py`** - Interactive guide for complete beginners
+- **🔍 `health_check.py`** - Check what's working and what needs attention  
+- **🎨 `easy_customize.py`** - Change colors and branding without coding
+- **📚 `BEGINNER_GUIDE.md`** - Complete step-by-step tutorial
+- **❓ `WHAT_DOES_THIS_DO.md`** - Explains what each file does
+
+### Getting Help
+- **Never used this before?** → Run `python3 start_here.py`
+- **Something not working?** → Run `python3 health_check.py`
+- **Want to customize?** → Run `python3 easy_customize.py`
+- **Need to understand files?** → Read `WHAT_DOES_THIS_DO.md`
 
 ## 🔧 Configuration
 
