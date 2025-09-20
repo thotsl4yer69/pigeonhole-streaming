@@ -1,13 +1,14 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { products, type Product } from "@/lib/products";
 import { CompatibilityBadges } from "@/components/CompatibilityBadges";
 
 export function ProductGrid() {
   return (
-    <section className="flex w-full flex-col gap-10">
+    <section id="devices" className="flex w-full flex-col gap-10">
       <div className="flex flex-col gap-2 text-left">
         <h2 className="font-orbitron text-3xl uppercase tracking-[0.3em] text-cyber-pink">Device Lineup</h2>
         <p className="max-w-2xl text-cyber-teal/70">
@@ -38,17 +39,17 @@ export function ProductCard({ product, index }: ProductCardProps) {
       viewport={{ once: true }}
       transition={{ delay: index * 0.08 }}
     >
-      <div className="relative overflow-hidden rounded-2xl border border-cyber-teal/40">
-        <motion.img
-          src={product.image}
-          alt={product.name}
-          className="h-40 w-full object-cover"
-          initial={{ scale: 1.1 }}
-          whileHover={{ scale: 1.2 }}
-          transition={{ type: "spring", stiffness: 120 }}
-        />
+      <motion.div
+        className="relative overflow-hidden rounded-2xl border border-cyber-teal/40"
+        initial={{ scale: 1.02 }}
+        whileHover={{ scale: 1.05 }}
+        transition={{ type: "spring", stiffness: 120 }}
+      >
+        <div className="relative h-40 w-full">
+          <Image src={product.image} alt={product.name} fill className="object-cover" sizes="(max-width:768px) 100vw, 320px" />
+        </div>
         <div className="scanlines absolute inset-0" />
-      </div>
+      </motion.div>
       <div className="flex flex-col gap-3">
         <h3 className="font-orbitron text-xl uppercase tracking-[0.2em] text-cyber-lime">{product.name}</h3>
         <p className="text-sm text-cyber-teal/70">{product.tagline}</p>
@@ -62,6 +63,14 @@ export function ProductCard({ product, index }: ProductCardProps) {
           </li>
         ))}
       </ul>
+      <div className="space-y-1 text-xs text-cyber-teal/70">
+        <p>
+          <span className="font-orbitron uppercase tracking-[0.3em] text-white/80">Lead</span>: {product.leadTime}
+        </p>
+        <p>
+          <span className="font-orbitron uppercase tracking-[0.3em] text-white/80">Warranty</span>: {product.warranty}
+        </p>
+      </div>
       <div className="mt-auto flex items-center justify-between text-sm text-cyber-pink">
         <span className="font-orbitron text-lg">{product.price}</span>
         <Link

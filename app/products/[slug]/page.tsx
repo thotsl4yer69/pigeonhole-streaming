@@ -1,12 +1,40 @@
-import { notFound } from "next/navigation";
 import Image from "next/image";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { getProductBySlug } from "@/lib/products";
 import { CompatibilityBadges } from "@/components/CompatibilityBadges";
 import { TMDBPreview } from "@/components/TMDBPreview";
-import { Button } from "@/components/ui/button";
+import { CheckoutButton } from "@/components/CheckoutButton";
 
 interface ProductPageProps {
   params: { slug: string };
+}
+
+export function generateMetadata({ params }: ProductPageProps): Metadata {
+  const product = getProductBySlug(params.slug);
+
+  if (!product) {
+    return {
+      title: "404 - Device not found | Pigeonhole Streaming"
+    };
+  }
+
+  return {
+    title: `${product.name} | Pigeonhole Streaming`,
+    description: product.description,
+    openGraph: {
+      title: `${product.name} | Pigeonhole Streaming`,
+      description: product.description,
+      images: product.image
+        ? [
+            {
+              url: product.image,
+              alt: product.name
+            }
+          ]
+        : undefined
+    }
+  };
 }
 
 export default function ProductPage({ params }: ProductPageProps) {
@@ -45,11 +73,30 @@ export default function ProductPage({ params }: ProductPageProps) {
           <div className="glitch-border rounded-3xl bg-black/50 p-6 text-sm text-white/80">
             <p>Price</p>
             <p className="font-orbitron text-2xl text-cyber-pink">{product.price}</p>
-            <form action={`/api/checkout/${product.id}`} method="post" className="mt-4">
-              <Button type="submit" className="w-full">
-                Initiate Checkout
-              </Button>
-            </form>
+            <div className="mt-4">
+              <CheckoutButton productId={product.id} productName={product.name} />
+            </div>
+            <dl className="mt-4 space-y-2 text-xs text-cyber-teal/70">
+              <div className="flex items-center justify-between gap-2">
+                <dt className="font-orbitron uppercase tracking-[0.3em] text-white/70">Lead</dt>
+                <dd>{product.leadTime}</dd>
+              </div>
+              <div className="flex items-center justify-between gap-2">
+                <dt className="font-orbitron uppercase tracking-[0.3em] text-white/70">Warranty</dt>
+                <dd>{product.warranty}</dd>
+              </div>
+            </dl>
+          </div>
+          <div className="glitch-border rounded-3xl bg-crt-glass/60 p-6">
+            <h2 className="font-orbitron text-sm uppercase tracking-[0.3em] text-cyber-lime">Flight Highlights</h2>
+            <ul className="mt-3 space-y-2 text-xs text-cyber-teal/80">
+              {product.highlights.map((highlight) => (
+                <li key={highlight} className="flex items-start gap-2">
+                  <span aria-hidden className="mt-1 h-1.5 w-1.5 rounded-full bg-cyber-pink" />
+                  <span>{highlight}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </aside>
       </section>
