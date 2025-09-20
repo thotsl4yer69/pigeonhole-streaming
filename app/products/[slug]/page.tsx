@@ -15,7 +15,7 @@ export function generateMetadata({ params }: ProductPageProps): Metadata {
 
   if (!product) {
     return {
-      title: "Device unavailable | Pigeonhole Streaming"
+      title: "404 - Device not found | Pigeonhole Streaming"
     };
   }
 
