@@ -43,7 +43,7 @@ export function PodcastPlayer({ title, description, duration, audioUrl }: Podcas
         aria-label={`Play ${title}`}
       >
         Your browser does not support the audio element. You can
-        <a href={audioUrl}> download the episode instead.</a>
+        <a href={audioUrl} target="_blank" rel="noopener noreferrer"> download the episode instead.</a>
       </audio>
     </motion.section>
   );
