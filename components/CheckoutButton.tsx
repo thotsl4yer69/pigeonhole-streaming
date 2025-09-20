@@ -91,7 +91,13 @@ export function CheckoutButton({ productId, productName }: CheckoutButtonProps) 
             className="flex items-start gap-2 rounded-2xl border border-cyber-pink/40 bg-black/50 p-4 text-xs text-cyber-pink"
           >
             <AlertCircle className="mt-[2px] h-4 w-4" aria-hidden />
-            <span>Unable to launch checkout for {productName}. Please try again shortly.</span>
+            <span>
+              Unable to launch checkout for {productName}.
+              <br />
+              <strong>Reason:</strong> {error}
+              <br />
+              Please try again. If the problem persists, check your connection or contact support.
+            </span>
           </motion.div>
         ) : null}
       </AnimatePresence>
