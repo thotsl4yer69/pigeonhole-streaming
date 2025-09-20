@@ -9,6 +9,9 @@ export type Product = {
   specs: string[];
   image: string;
   tmdbCollectionId?: number;
+  leadTime: string;
+  warranty: string;
+  highlights: string[];
 };
 
 export const products: Product[] = [
@@ -23,7 +26,10 @@ export const products: Product[] = [
     compatibility: ["Dolby Vision", "HDR10+", "Matter Ready"],
     specs: ["Amlogic G3 Octa-Core", "32GB UFS Storage", "4GB LPDDR5", "Wi-Fi 6E"],
     image: "/products/cyber-finch.svg",
-    tmdbCollectionId: 420818
+    tmdbCollectionId: 420818,
+    leadTime: "Ships within 48 hours",
+    warranty: "3-year glitch replacement plan",
+    highlights: ["Includes Neon Glide remote", "Lifetime TMDB sync token", "Matter bridge pre-configured"]
   },
   {
     id: "prism-dove",
@@ -36,7 +42,10 @@ export const products: Product[] = [
     compatibility: ["ProRes", "DaVinci Sync", "Calibrated"],
     specs: ["Snapdragon X Elite", "64GB NVMe", "8GB LPDDR5X", "Tri-Band Wi-Fi"],
     image: "/products/prism-dove.svg",
-    tmdbCollectionId: 9485
+    tmdbCollectionId: 9485,
+    leadTime: "Built-to-order · dispatch in 5 days",
+    warranty: "4-year color pipeline assurance",
+    highlights: ["Cinema-grade SDI input", "Dual calibration probes included", "Curated filmmaker playlist"]
   },
   {
     id: "nocturne-owl",
@@ -48,7 +57,10 @@ export const products: Product[] = [
     price: "$329",
     compatibility: ["Dolby Atmos", "VRR", "Cloud DVR"],
     specs: ["Custom Ryzen Edge", "48GB SSD Cache", "6GB LPDDR5", "Bluetooth 5.4"],
-    image: "/products/nocturne-owl.svg"
+    image: "/products/nocturne-owl.svg",
+    leadTime: "Ships in 72 hours",
+    warranty: "2-year nocturnal harmony coverage",
+    highlights: ["Ambient lumen underglow", "Low-noise cooling fins", "Signal sanctuary sleep timer"]
   }
 ];
 

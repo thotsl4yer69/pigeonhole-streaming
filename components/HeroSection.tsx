@@ -1,22 +1,21 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   return (
     <section className="relative flex w-full flex-col gap-12 overflow-hidden rounded-3xl border border-cyber-pink/50 bg-crt-glass/60 p-10 text-center shadow-glitch">
-      <div className="absolute inset-0 -z-10 opacity-30">
-        <motion.img
-          src="/crt-pigeon.svg"
-          alt="CRT pigeon silhouette"
-          className="h-full w-full object-cover"
-          initial={{ scale: 1.1, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.4, ease: "easeOut" }}
-        />
-      </div>
+      <motion.div
+        className="absolute inset-0 -z-10 opacity-30"
+        initial={{ scale: 1.1, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1.4, ease: "easeOut" }}
+      >
+        <Image src="/crt-pigeon.svg" alt="CRT pigeon silhouette" fill priority className="object-cover" sizes="100vw" />
+      </motion.div>
       <motion.h1
         className="font-orbitron text-4xl uppercase tracking-[0.4em] sm:text-5xl"
         initial={{ opacity: 0, y: 30 }}
