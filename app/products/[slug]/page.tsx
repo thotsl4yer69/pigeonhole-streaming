@@ -1,12 +1,51 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { getProductBySlug } from "@/lib/products";
+import { getProductBySlug, products } from "@/lib/products";
 import { CompatibilityBadges } from "@/components/CompatibilityBadges";
 import { TMDBPreview } from "@/components/TMDBPreview";
-import { Button } from "@/components/ui/button";
+import { CheckoutButton } from "@/components/CheckoutButton";
+import { ProductStructuredData } from "@/components/StructuredData";
+
+const siteUrl = "https://mz1312.xx.kg";
 
 interface ProductPageProps {
   params: { slug: string };
+}
+
+export function generateStaticParams() {
+  return products.map((product) => ({ slug: product.slug }));
+}
+
+export function generateMetadata({ params }: ProductPageProps): Metadata {
+  const product = getProductBySlug(params.slug);
+
+  if (!product) {
+    return {
+      title: "Product not found"
+    };
+  }
+
+  const canonical = `${siteUrl}/products/${product.slug}`;
+
+  return {
+    title: product.name,
+    description: product.description,
+    alternates: { canonical },
+    openGraph: {
+      type: "product",
+      url: canonical,
+      title: product.name,
+      description: product.description,
+      images: [{ url: `${siteUrl}${product.image}`, width: 1200, height: 675, alt: product.name }]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: product.name,
+      description: product.description,
+      images: [`${siteUrl}${product.image}`]
+    }
+  };
 }
 
 export default function ProductPage({ params }: ProductPageProps) {
@@ -18,6 +57,7 @@ export default function ProductPage({ params }: ProductPageProps) {
 
   return (
     <div className="mx-auto flex w-full max-w-5xl flex-col gap-12">
+      <ProductStructuredData product={product} siteUrl={siteUrl} />
       <header className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <div className="space-y-4">
           <h1 className="font-orbitron text-4xl uppercase tracking-[0.4em] text-cyber-pink">{product.name}</h1>
@@ -45,11 +85,7 @@ export default function ProductPage({ params }: ProductPageProps) {
           <div className="glitch-border rounded-3xl bg-black/50 p-6 text-sm text-white/80">
             <p>Price</p>
             <p className="font-orbitron text-2xl text-cyber-pink">{product.price}</p>
-            <form action={`/api/checkout/${product.id}`} method="post" className="mt-4">
-              <Button type="submit" className="w-full">
-                Initiate Checkout
-              </Button>
-            </form>
+            <CheckoutButton productId={product.id} productName={product.name} />
           </div>
         </aside>
       </section>

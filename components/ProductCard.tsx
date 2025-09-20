@@ -1,13 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { products, type Product } from "@/lib/products";
 import { CompatibilityBadges } from "@/components/CompatibilityBadges";
 
 export function ProductGrid() {
   return (
-    <section className="flex w-full flex-col gap-10">
+    <section id="devices" className="flex w-full flex-col gap-10">
       <div className="flex flex-col gap-2 text-left">
         <h2 className="font-orbitron text-3xl uppercase tracking-[0.3em] text-cyber-pink">Device Lineup</h2>
         <p className="max-w-2xl text-cyber-teal/70">
@@ -32,23 +33,27 @@ interface ProductCardProps {
 export function ProductCard({ product, index }: ProductCardProps) {
   return (
     <motion.article
-      className="glitch-border flex flex-col gap-6 rounded-3xl bg-crt-glass/70 p-6"
+      className="group glitch-border flex flex-col gap-6 rounded-3xl bg-crt-glass/70 p-6"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.08 }}
     >
-      <div className="relative overflow-hidden rounded-2xl border border-cyber-teal/40">
-        <motion.img
+      <motion.div
+        className="relative overflow-hidden rounded-2xl border border-cyber-teal/40"
+        initial={{ scale: 1.02 }}
+        whileHover={{ scale: 1.05 }}
+        transition={{ type: "spring", stiffness: 120 }}
+      >
+        <Image
           src={product.image}
           alt={product.name}
-          className="h-40 w-full object-cover"
-          initial={{ scale: 1.1 }}
-          whileHover={{ scale: 1.2 }}
-          transition={{ type: "spring", stiffness: 120 }}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-110"
+          sizes="(max-width: 768px) 100vw, 320px"
         />
         <div className="scanlines absolute inset-0" />
-      </div>
+      </motion.div>
       <div className="flex flex-col gap-3">
         <h3 className="font-orbitron text-xl uppercase tracking-[0.2em] text-cyber-lime">{product.name}</h3>
         <p className="text-sm text-cyber-teal/70">{product.tagline}</p>
@@ -66,7 +71,7 @@ export function ProductCard({ product, index }: ProductCardProps) {
         <span className="font-orbitron text-lg">{product.price}</span>
         <Link
           href={`/products/${product.slug}`}
-          className="font-orbitron text-xs uppercase tracking-[0.3em] text-cyber-teal hover:text-cyber-pink"
+          className="font-orbitron text-xs uppercase tracking-[0.3em] text-cyber-teal transition hover:text-cyber-pink"
         >
           View Specs
         </Link>
