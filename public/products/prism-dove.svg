@@ -1,0 +1,8 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" rx="24" fill="#0b1d26" />
+  <rect x="60" y="50" width="280" height="200" rx="22" fill="#122936" stroke="#ff71ce" stroke-width="4" />
+  <path d="M80 220L200 80L320 220H80Z" fill="#ff71ce" opacity="0.25" />
+  <path d="M110 220L200 100L290 220H110Z" fill="#01cdfe" opacity="0.35" />
+  <path d="M140 220L200 130L260 220H140Z" fill="#05ffa1" opacity="0.4" />
+  <text x="100" y="260" font-family="Orbitron, sans-serif" font-size="20" letter-spacing="4" fill="#01cdfe">PRISM DOVE</text>
+</svg>

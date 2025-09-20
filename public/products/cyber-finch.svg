@@ -1,0 +1,9 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" rx="24" fill="#0b1d26" />
+  <rect x="40" y="60" width="320" height="180" rx="20" fill="#122936" stroke="#01cdfe" stroke-width="4" />
+  <circle cx="120" cy="150" r="40" fill="#01cdfe" opacity="0.6" />
+  <circle cx="200" cy="140" r="60" fill="#ff71ce" opacity="0.4" />
+  <circle cx="260" cy="160" r="30" fill="#05ffa1" opacity="0.5" />
+  <rect x="120" y="210" width="160" height="12" rx="6" fill="#05ffa1" opacity="0.5" />
+  <text x="60" y="250" font-family="Orbitron, sans-serif" font-size="20" letter-spacing="5" fill="#ff71ce">CYBER FINCH</text>
+</svg>

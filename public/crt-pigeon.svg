@@ -1,0 +1,13 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#0b1d26" />
+  <g filter="url(#crt)">
+    <path d="M200 420C240 300 320 200 420 200C520 200 600 280 620 360C600 380 560 400 520 400C500 430 460 460 400 460C340 460 280 440 200 420Z" fill="#01cdfe" opacity="0.45"/>
+    <path d="M220 410C250 320 330 240 420 240C510 240 570 300 590 350C560 360 520 370 500 380C470 410 430 430 380 430C330 430 270 420 220 410Z" fill="#ff71ce" opacity="0.35"/>
+    <circle cx="430" cy="270" r="18" fill="#ffffff" opacity="0.6" />
+  </g>
+  <defs>
+    <filter id="crt" x="0" y="0" width="800" height="600" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+</svg>

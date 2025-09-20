@@ -1,0 +1,16 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="60" rx="12" fill="#0b1d26" />
+  <g filter="url(#glow)">
+    <path d="M30 45L15 15H30L40 34L50 15H65L50 45H30Z" fill="#01cdfe"/>
+    <text x="80" y="40" font-family="Orbitron, sans-serif" font-size="28" letter-spacing="10" fill="#ff71ce">PH</text>
+  </g>
+  <defs>
+    <filter id="glow" x="0" y="0" width="200" height="60" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>
